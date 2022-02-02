@@ -94,9 +94,14 @@ content white because black background */
 }
 
 #myPro>p{
+    margin-top: 0px;
+   // margin-bottom: 0px;
     color: white;
     font-size: 35px;
+    position: relative;
+    bottom: 15px;
 }
+
 
 #assignment>p{
     margin-top: 0px;
