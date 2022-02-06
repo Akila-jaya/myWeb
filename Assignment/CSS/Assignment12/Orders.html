@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+
+    <header>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Customers-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Customers</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Orders-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
+            </li>
+
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Items-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Items</button>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
+        </div>
+
+    </header>
+
+
+</head>
+<body>
+<main>
+    <div>
+        <h3 class="ps-4" style="font-family: Arial;">
+            <img src="assets/images/Orderslogo.png" alt="" width="33" height="33" class="d-inline-block align-text-top">
+            Orders
+        </h3>
+    </div>
+</main>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Order Id</label>
+                    <input type="email" class="form-control" id="inputEmail41">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Date</label>
+                    <input type="password" class="form-control" id="inputPassword41">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Customer</label>
+                    <input type="text" class="form-control" id="inputAddress1" placeholder="">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Customer Id</label>
+                    <input type="text" class="form-control" id="inputAddress21" placeholder="">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="inputCity1">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Salary</label>
+                    <input type="text" class="form-control" id="inputSalary1">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="inputSalary11">
+                </div>
+
+            </form>
+
+
+
+        </div>
+        <div class="col">
+
+
+
+            <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="validationDefault01" class="form-label">Item</label>
+                    <input type="text" class="form-control" id="validationDefault01" value="" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Item Code</label>
+                    <input type="text" class="form-control" id="validationDefault02" value="" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationDefaultUsername" class="form-label">Itemname</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                        <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationDefault03" class="form-label">price</label>
+                    <input type="text" class="form-control" id="validationDefault03" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationDefault03" class="form-label">QTYOnhand</label>
+                    <input type="text" class="form-control" id="validationDefault0311" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationDefault03" class="form-label">price</label>
+                    <input type="text" class="form-control" id="validationDefault031" required>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Add Item</button>
+                </div>
+            </form>
+
+
+
+        </div>
+        <div class="col">
+
+
+            <p class="fw-bold">Total:-100Rs/=</p>
+            <p class="fw-bold">SubTotal:-10Rs/=</p>
+
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip01" class="form-label">Cash</label>
+                    <input type="text" class="form-control" id="validationTooltip01" value="" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip02" class="form-label">Discount</label>
+                    <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltipUsername" class="form-label">Balnce</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                        <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                            Please choose a unique and valid username.
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Purchase</button>
+                </div>
+            </form>
+
+
+        </div>
+
+
+
+        <section class="row mt-4">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <table class="table table-hover">
+                    <thead>
+                    <tr style="background-color: #abffcb">
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">QTY</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">I000</th>
+                        <td>Mango</td>
+                        <td>23</td>
+                        <td>3</td>
+                        <td>4789</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-1"></div>
+
+        </section>
+        </section>
+
+    </div>
+</div>
+
+
+</body>
+</html>
