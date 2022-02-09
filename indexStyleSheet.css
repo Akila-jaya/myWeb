@@ -94,12 +94,20 @@ content white because black background */
 }
 
 #myPro>p{
-    margin-top: 0px;
-   // margin-bottom: 0px;
+  /*  margin-top: 0px;*/
+ /*  // margin-bottom: 0px;
     color: white;
     font-size: 35px;
     position: relative;
-    bottom: 15px;
+    bottom: 14px;*/
+
+
+    margin-top: 0px;
+    color: white;
+    font-size: 55px;
+
+
+
 }
 
 
@@ -135,7 +143,7 @@ content white because black background */
 #ceyloanimage{
     position: absolute;
     right: 380px;
-    bottom: -1450.94px;
+    bottom: -1795.94px;
 }
 
 #firstpara{
@@ -147,4 +155,66 @@ content white because black background */
 #secondpara{
     position: relative;
     right: 145px;
+}
+#header{
+    background-color: black;
+
+}
+#header>ul>li{
+    display: inline-block;
+}
+
+#header>ul>a>li.nav{
+    display: inline-block;
+}
+
+
+
+#header>h1{
+ display: inline-block;
+}
+
+#header>ul>li:nth-child(1){
+
+    color: white;
+    cursor: pointer;
+}
+
+
+#header>ul>li:nth-child(2){
+    padding-left: 300px;
+    color: white;
+    cursor: pointer;
+}
+
+html>body>header#header>ul>a>li.nav{
+    padding-left: 100px;
+    color: white;
+    cursor: pointer;
+}
+
+#mySkillsdiv{
+    padding-bottom: 76px;
+}
+#myProdiv{
+    padding-bottom: 200px;
+}
+#prhoteldiv{
+    padding-top: 100px;
+}
+
+#mySkillsdiv>img{
+    padding-right: 80px;
+    padding-bottom: 100px;
+    cursor: pointer;
+}
+/*
+.contactMeImages{
+    position: relative;
+    display: inline-block;
+
+}*/
+
+.contactmeimg{
+    cursor: pointer;
 }

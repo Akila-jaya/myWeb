@@ -46,7 +46,24 @@
     <div class="row align-items-start">
         <div class="col">
 
-            <img src="assets/images/Items.jpg" alt="" width="533" height="433" class="d-inline-block align-text-top">
+            <div class="col-12 col-md-5">
+                <div class="mb-3">
+                    <label class="form-label" for="itemCode">Item Code</label>
+                    <input class="form-control" id="itemCode" placeholder="Item Code" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="itemName">Item Name</label>
+                    <input class="form-control" id="itemName" placeholder="Item Name" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="itemQty">Item Qty</label>
+                    <input class="form-control" id="itemQty" placeholder="Item Qty" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="itemPrice">Item Price</label>
+                    <input class="form-control" id="itemPrice" placeholder="Item Price" type="text">
+                </div>
+            </div>
 
         </div>
         <div class="col">
@@ -56,17 +73,11 @@
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <div id="emailHelp" class="form-text">Enter Item name or ItemId to search Item.</div>
                     <button type="Search" class="btn btn-primary">Search</button>
-
-
-
                 </div>
-
-
 
                 <button type="Search" class="btn btn-primary">Delete</button>
                 <button type="Search" class="btn btn-primary">Clear</button>
-                <button type="Search" class="btn btn-primary">New Item</button>
-
+                <button type="button"  class="btn btn-success" id="btnSaveOrUpdate">Save or Update</button>
             </form>
 
             <table class="table table-striped">
@@ -78,31 +89,8 @@
                     <th scope="col">Price</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">I000</th>
-                    <td>Mango</td>
-                    <td>34</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <th scope="row">I000</th>
-                    <td>Mango</td>
-                    <td>34</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <th scope="row">I000</th>
-                    <td>Mango</td>
-                    <td>34</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <th scope="row">I000</th>
-                    <td>Mango</td>
-                    <td>34</td>
-                    <td>45</td>
-                </tr>
+                <tbody id="itemTable">
+
                 </tbody>
 
 
@@ -112,6 +100,35 @@
     </div>
 
 </div>
+
+
+
+
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script>
+
+    $("#btnSaveOrUpdate").click(function () {
+
+        //gather customer information
+        let itemCode = $("#itemCode").val();
+        let itemName = $("#itemName").val();
+        let itemQty = $("#itemQty").val();
+        let itemPrice = $("#itemPrice").val();
+
+        /*create a html row*/
+        let row = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemQty}</td><td>${itemPrice}</td></tr>`;
+
+        /*select the table body and append the row */
+        $("#itemTable").append(row);
+    });
+
+</script>
+
+
 
 
 </body>
