@@ -64,7 +64,11 @@ body>main>section:nth-child(5)>h1>center>b::first-letter{
     font-size: 40px;
     color: goldenrod;
 }
+#education::first-letter{
+    color: goldenrod;
 
+
+}
 
 /*
 content white because black background */
@@ -148,13 +152,18 @@ content white because black background */
 
 #firstpara{
     position: relative;
-    left: 292px;
+    left: 145px;
+    display: inline-block;
+    top: 100px;
+    font-family: 'Merriweather', serif;
 }
 
 
 #secondpara{
     position: relative;
     right: 145px;
+   /* font-family: 'Merriweather', serif;*/
+    top: 70px;
 }
 #header{
     background-color: black;
@@ -191,6 +200,7 @@ html>body>header#header>ul>a>li.nav{
     padding-left: 100px;
     color: white;
     cursor: pointer;
+    font-family: 'Merriweather', serif;
 }
 
 #mySkillsdiv{
@@ -217,4 +227,20 @@ html>body>header#header>ul>a>li.nav{
 
 .contactmeimg{
     cursor: pointer;
+    display: inline-block;
+}
+
+#secondparalink{
+    color:goldenrod ;
+}
+#firstparalink{
+    color: goldenrod;
+}
+
+#hello{
+    font-family: 'Merriweather', sans-serif;
+}
+
+#mailto{
+    color: white;
 }
