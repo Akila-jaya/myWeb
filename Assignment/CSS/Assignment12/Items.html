@@ -108,23 +108,90 @@
 
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-
+<script src="db/DB.js"></script>
 <script>
 
     $("#btnSaveOrUpdate").click(function () {
+        //alert("a")
+        saveItem();
+        loadCustomer();
 
         //gather customer information
-        let itemCode = $("#itemCode").val();
-        let itemName = $("#itemName").val();
-        let itemQty = $("#itemQty").val();
-        let itemPrice = $("#itemPrice").val();
 
-        /*create a html row*/
-        let row = `<tr><td>${itemCode}</td><td>${itemName}</td><td>${itemQty}</td><td>${itemPrice}</td></tr>`;
-
-        /*select the table body and append the row */
-        $("#itemTable").append(row);
     });
+
+
+    $("#itemCode").focus();
+
+    $("#itemCode").keydown(function (event) {
+        if (event.key == "Enter") {
+            $("#itemName").focus();
+        }
+    });
+
+
+    $("#itemName").keydown(function (event) {
+        if (event.key == "Enter") {
+            $("#itemQty").focus();
+        }
+    });
+
+
+    $("#itemQty").keydown(function (event) {
+        if (event.key == "Enter") {
+            $("#itemPrice").focus();
+        }
+    });
+
+
+function saveItem(){
+    let itemCode = $("#itemCode").val();
+    let itemName = $("#itemName").val();
+    let itemQty = $("#itemQty").val();
+    let itemPrice = $("#itemPrice").val();
+
+    var itemObject={
+        id:itemCode,
+        name:itemName,
+        qty:itemQty,
+        price:itemPrice
+    };
+
+    itemDB.push(itemObject);
+    console.log(itemDB);
+
+}
+
+
+    function loadCustomer() {
+        //alert("lo")
+        $("#itemTable").empty();
+        for (var i of itemDB){
+            let row = `<tr><td>${i.id}</td><td>${i.name}</td><td>${i.qty}</td><td>${i.price}</td></tr>`;
+            $("#itemTable").append(row);
+
+            $('#itemCode,#itemName,#itemQty,#itemPrice').val("");
+        }
+
+
+        $("#itemTable>tr").click(function(){
+
+            let itemCode = $(this).children(":eq(0)").text(); // select first td and get text
+            let itemName = $(this).children(":eq(1)").text();
+            let itemQty = $(this).children(":eq(2)").text();
+            let itemPrice = $(this).children(":eq(3)").text();
+
+            console.log(itemCode, itemName, itemQty, itemPrice);
+            $("#itemCode").val(itemCode);
+            $("#itemName").val(itemName);
+            $("#itemQty").val(itemQty);
+            $("#itemPrice").val(itemPrice);
+        });
+
+
+    }
+
+
 
 </script>
 
