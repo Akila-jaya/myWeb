@@ -69,10 +69,10 @@
         <div class="col">
             <form>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">SEARCH CUSTOMER</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label" id="searchCust">SEARCH CUSTOMER</label>
+                    <input  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Custome Id">
                     <div id="emailHelp" class="form-text">Enter customer name or NIC to search customer.</div>
-                    <button type="Search" class="btn btn-primary">Search</button>
+                    <button type="Search" class="btn btn-primary" id="btnSearch">Search</button>
 
                 </div>
 
@@ -136,7 +136,7 @@
             //let row = `<tr><td>${customerID}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
 
             customerDB.push(customerObject);
-            console.log(customerDB);
+
             /*select the table body and append the row */
             //$("#customerTable").append(row);
 
@@ -147,9 +147,23 @@
         for (var i of customerDB){
             let row = `<tr><td>${i.id}</td><td>${i.name}</td><td>${i.address}</td><td>${i.salary}</td></tr>`;
             $("#customerTable").append(row);
-            console.log("akila");
+
             $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').val("");
         }
+
+        $("#customerTable>tr").click(function(){
+
+                 let cusID = $(this).children(":eq(0)").text(); // select first td and get text
+                 let cusName = $(this).children(":eq(1)").text();
+                 let cusAddress = $(this).children(":eq(2)").text();
+                 let cusSalary = $(this).children(":eq(3)").text();
+
+                 console.log(cusID, cusName, cusAddress, cusSalary);
+                    $("#txtCusID").val(cusID);
+                    $("#txtCusName").val(cusName);
+                    $("#txtCusAddress").val(cusAddress);
+                    $("#txtCusTP").val(cusSalary);
+        });
 
     }
    /* function clearAll(){
@@ -181,13 +195,36 @@
         }
     });
 
-/*
-    $("#txtCusTP").keydown(function (event) {
-        if (event.key == "Enter") {
-            $("#btnSaveOrUpdate").focus();
+
+    $("#btnSearch").click(function () {
+
+        var id=$("#exampleInputEmail1").val();
+        console.log("aaa  "+id);
+        var obj=search(id);
+        if(obj){
+            $("#txtCusID").val(obj.id);
+            $("#txtCusName").val(obj.name);
+            $("#txtCusAddress").val(obj.address);
+            $("#txtCusTP").val(obj.salary);
+        }else{
+            alert("No Such a Customer");
+            $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').val("");
         }
     });
-*/
+
+
+    function search(ids){
+        for (var i=0;i<customerDB.length;i++){
+            if(customerDB[i].id==ids){
+                return customerDB[i];
+            }
+
+        }
+
+
+    }
+
+
 
 
 
