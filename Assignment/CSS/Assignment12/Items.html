@@ -70,9 +70,9 @@
             <form>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Search Items</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Id">
                     <div id="emailHelp" class="form-text">Enter Item name or ItemId to search Item.</div>
-                    <button type="Search" class="btn btn-primary">Search</button>
+                    <button type="Search" class="btn btn-primary" id="btnSearch">Search</button>
                 </div>
 
                 <button type="Search" class="btn btn-primary">Delete</button>
@@ -112,6 +112,7 @@
 <script>
 
     $("#btnSaveOrUpdate").click(function () {
+        alert("Do you want really add this item...?");
         //alert("a")
         saveItem();
         loadCustomer();
@@ -189,7 +190,44 @@ function saveItem(){
         });
 
 
+        $("#itemTable>tr").dblclick(function(){
+            alert("Do you want to delete this row");
+            $(this).closest("tr").remove();
+            $('#itemCode,#itemName,#itemQty,#itemPrice').val("");
+        });
+
+
+
+
     }
+
+
+    $("#btnSearch").click(function () {
+
+        var id=$("#exampleInputEmail1").val();
+        console.log("aaa  "+id);
+        var obj=search(id);
+        if(obj){
+            $("#itemCode").val(obj.id);
+            $("#itemName").val(obj.name);
+            $("#itemQty").val(obj.qty);
+            $("#itemPrice").val(obj.price);
+        }else{
+            alert("No Such a Customer");
+            $('#itemCode,#itemName,#itemQty,#itemPrice').val("");
+        }
+    });
+
+
+    function search(ids){
+        for (var i=0;i<itemDB.length;i++){
+            if(itemDB[i].id==ids){
+                return itemDB[i];
+            }
+        }
+    }
+
+
 
 
 

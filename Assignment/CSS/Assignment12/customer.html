@@ -78,7 +78,7 @@
 
 
 
-                <button type="button" class="btn btn-primary">Delete</button>
+                <button id="updateBtn" type="button" class="btn btn-primary">Update</button>
                 <button type="button" class="btn btn-primary">Clear</button>
                 <button type="button"  class="btn btn-success" id="btnSaveOrUpdate">Save or Update</button>
 
@@ -158,14 +158,70 @@
                  let cusAddress = $(this).children(":eq(2)").text();
                  let cusSalary = $(this).children(":eq(3)").text();
 
-                 console.log(cusID, cusName, cusAddress, cusSalary);
+                // console.log(cusID, cusName, cusAddress, cusSalary);
                     $("#txtCusID").val(cusID);
                     $("#txtCusName").val(cusName);
                     $("#txtCusAddress").val(cusAddress);
                     $("#txtCusTP").val(cusSalary);
+
+
+                var row_index = $(this).closest("tr").index();
+                var col_index = $(this).index();
+                console.log(row_index);
+               // alert("aa"+row_index);
+          //  });
+
+
+            $("#updateBtn").click(function () {
+                alert("ayya"+row_index);
+                editRow();
+
+            });
+
+            function editRow()
+            {
+                alert("aa"+row_index);
+
+                console.log(row_index);
+
+                console.log($(this).children(":eq(0)").text());
+
+
+
+                $(this).children(":eq(0)").text($("#txtCusID").val());
+
+            }
+
+
+
+
+
+            ////////////////////////////
+
+
         });
 
+        $("#customerTable>tr").dblclick(function(){
+            alert("Do you want to delete this row");
+            $(this).closest("tr").remove();
+            $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').val("");
+        });
+
+
+
+       /* $(function() {
+            $(".row").click(function() {
+                alert("Akila:"+ $(this).parent().attr("rowIndex") );
+            });
+        });*/
+
+
+
+
+
+
     }
+
 
     $("#txtCusID").focus();
 
@@ -217,6 +273,9 @@
 
 
 
+   /* $("#updateBtn").click(function () {
+
+    });*/
 
 
 
