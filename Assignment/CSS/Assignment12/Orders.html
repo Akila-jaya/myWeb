@@ -58,26 +58,29 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputPassword4" class="form-label">Date</label>
-                    <input type="password" class="form-control" id="inputPassword41">
+                    <input type="Date" class="form-control" id="inputPassword41">
                 </div>
                 <div class="col-12">
-                    <label for="inputAddress" class="form-label">Customer</label>
-                    <input type="text" class="form-control" id="inputAddress1" placeholder="">
+                    <select id="formselector" class="form-select" aria-label="Default select example">
+                        <option selected>Customer Id's</option>
+
+                    </select>
                 </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Customer Id</label>
+                <!--<div class="col-12">
+                    <label for="inputAddress2" class="form-label">Customer</label>
                     <input type="text" class="form-control" id="inputAddress21" placeholder="">
-                </div>
+                </div>-->
                 <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Name</label>
+                    <label id="customerName" for="inputCity" class="form-label">Name</label>
                     <input type="text" class="form-control" id="inputCity1">
+
                 </div>
                 <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Salary</label>
+                    <label id="customerSalary" for="inputCity" class="form-label">Salary</label>
                     <input type="text" class="form-control" id="inputSalary1">
                 </div>
                 <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Address</label>
+                    <label id="customerAddress" for="inputCity" class="form-label">Address</label>
                     <input type="text" class="form-control" id="inputSalary11">
                 </div>
 
@@ -203,6 +206,56 @@
 
     </div>
 </div>
+
+
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="db/DB.js"></script>
+<script>
+    //console.log("id2");
+        optionText = 'Ultimate';
+        optionValue = 'ultimate';
+
+        var customerObject3={
+            id:"c001",
+            name:"name1",
+            address:"adress",
+            salary:"salary"
+
+        };
+        customerDB.push(customerObject3);
+        console.log(customerDB);
+
+        for (var i=0;i<customerDB.length;i++){
+            $('#formselector').append(new Option(customerDB[i].id));
+
+        }
+
+            //console.log("id2");
+            var id2=$("#formselector").val();
+            console.log(id2);
+
+            setText();
+
+            function setText(){
+                $("#inputCity1").val(customerObject3.name);
+
+                $("#inputSalary1").val(customerObject3.address);
+                $("#inputSalary11").val(customerObject3.address);
+
+            }
+
+
+
+
+
+
+
+       // console.log("id2");
+
+</script>
 
 
 </body>

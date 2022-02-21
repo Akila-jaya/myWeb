@@ -15,9 +15,13 @@
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="Customers-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Customers</button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="Orders-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
-        </li>
+        <a href="Orders.html">
+            <li  class="nav-item" role="presentation">
+                <button class="nav-link" id="Orders-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
+            </li>
+
+        </a>
+
 
 
         <li class="nav-item" role="presentation">
@@ -39,6 +43,7 @@
             <img src="assets/images/cust.png" alt="" width="33" height="33" class="d-inline-block align-text-top">
             Customers
         </h3>
+
     </div>
 </main>
 
@@ -164,41 +169,6 @@
                     $("#txtCusAddress").val(cusAddress);
                     $("#txtCusTP").val(cusSalary);
 
-
-                var row_index = $(this).closest("tr").index();
-                var col_index = $(this).index();
-                console.log(row_index);
-               // alert("aa"+row_index);
-          //  });
-
-
-            $("#updateBtn").click(function () {
-                alert("ayya"+row_index);
-                editRow();
-
-            });
-
-            function editRow()
-            {
-                alert("aa"+row_index);
-
-                console.log(row_index);
-
-                console.log($(this).children(":eq(0)").text());
-
-
-
-                $(this).children(":eq(0)").text($("#txtCusID").val());
-
-            }
-
-
-
-
-
-            ////////////////////////////
-
-
         });
 
         $("#customerTable>tr").dblclick(function(){
@@ -207,19 +177,24 @@
             $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusTP').val("");
         });
 
+        $("#customerTable>tr").click(function(){
+            var row_index = $(this).closest("tr").index();
+            var col_index = $(this).index();
+            console.log(row_index);
+        });
 
+        $("#updateBtn").click(function () {
+            //alert("ayyqqqqa"+row_index);
+            editRow();
+        });
 
-       /* $(function() {
-            $(".row").click(function() {
-                alert("Akila:"+ $(this).parent().attr("rowIndex") );
-            });
-        });*/
-
-
-
-
-
-
+        function editRow(){
+            let cusID1 = $(row_index).children(":eq(0)").text(); // select first td and get text
+            let cusName1 = $(row_index).children(":eq(1)").text();
+            let cusAddress1 = $(row_index).children(":eq(2)").text();
+            let cusSalary1 = $(row_index).children(":eq(3)").text();
+            $(row_index).children(":eq(0)").val(cusID1);
+        }
     }
 
 
@@ -247,7 +222,6 @@
 
 
     $("#btnSearch").click(function () {
-
         var id=$("#exampleInputEmail1").val();
         console.log("aaa  "+id);
         var obj=search(id);
@@ -270,17 +244,6 @@
             }
         }
     }
-
-
-
-   /* $("#updateBtn").click(function () {
-
-    });*/
-
-
-
-
-
 
 </script>
 
