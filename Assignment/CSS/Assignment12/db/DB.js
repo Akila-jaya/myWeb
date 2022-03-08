@@ -5,3 +5,5 @@
 
 var customerDB= new Array();
 var itemDB= new Array();
+var addItem=new Array();
+var orderDB=new Array();

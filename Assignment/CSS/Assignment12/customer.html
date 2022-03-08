@@ -45,7 +45,7 @@
         </h3>
 
     </div>
-</main>
+
 
 <div class="container">
     <div class="row align-items-start">
@@ -76,8 +76,8 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label" id="searchCust">SEARCH CUSTOMER</label>
                     <input  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Custome Id">
-                    <div id="emailHelp" class="form-text">Enter customer name or NIC to search customer.</div>
-                    <button type="Search" class="btn btn-primary" id="btnSearch">Search</button>
+                    <div id="enterId" class="form-text">Enter customer name or NIC to search customer.</div>
+                    <button type="Search" class="btn btn-primary" id="btnSearch1">Search</button>
 
                 </div>
 
@@ -85,7 +85,7 @@
 
                 <button id="updateBtn" type="button" class="btn btn-primary">Update</button>
                 <button type="button" class="btn btn-primary">Clear</button>
-                <button type="button"  class="btn btn-success" id="btnSaveOrUpdate">Save or Update</button>
+                <button type="button"  class="btn btn-success" id="btnSaveOrUpdate1">Save or Update</button>
 
             </form>
 
@@ -107,6 +107,245 @@
     </div>
 
 </div>
+</main>
+
+<main>
+    <div>
+        <h3 class="ps-4" style="font-family: Arial;">
+            <img src="assets/images/ItemsIcon.png" alt="" width="33" height="33" class="d-inline-block align-text-top">
+            Items
+        </h3>
+    </div>
+
+
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+
+                <div class="col-12 col-md-5">
+                    <div class="mb-3">
+                        <label class="form-label" for="itemCode">Item Code</label>
+                        <input class="form-control" id="itemCode" placeholder="Item Code" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="itemName">Item Name</label>
+                        <input class="form-control" id="itemName" placeholder="Item Name" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="itemQty">Item Qty</label>
+                        <input class="form-control" id="itemQty" placeholder="Item Qty" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="itemPrice">Item Price</label>
+                        <input class="form-control" id="itemPrice" placeholder="Item Price" type="text">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Search Items</label>
+                        <input type="email" class="form-control" id="exampleInputEmail12" aria-describedby="emailHelp" placeholder="Enter Id">
+                        <div id="emailHelp" class="form-text">Enter Item name or ItemId to search Item.</div>
+                        <button type="Search" class="btn btn-primary" id="btnSearch">Search</button>
+                    </div>
+
+                    <button type="Search" class="btn btn-primary">Delete</button>
+                    <button type="Search" class="btn btn-primary">Clear</button>
+                    <button type="button"  class="btn btn-success" id="btnSaveOrUpdate">Save or Update</button>
+                </form>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr style="background-color: #abffcb">
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">QTY</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody id="itemTable">
+
+                    </tbody>
+
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+
+<main>
+    <div>
+        <h3 class="ps-4" style="font-family: Arial;">
+            <img src="assets/images/Orderslogo.png" alt="" width="33" height="33" class="d-inline-block align-text-top">
+            Orders
+        </h3>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+
+
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Order Id</label>
+                        <input type="email" class="form-control" id="inputEmail41">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Date</label>
+                        <input type="Date" class="form-control" id="inputPassword41">
+                    </div>
+                    <div class="col-12">
+                        <select id="formselector" class="form-select" aria-label="Default select example">
+                            <option selected>Customer Id's</option>
+
+                        </select>
+                    </div>
+                    <!--<div class="col-12">
+                        <label for="inputAddress2" class="form-label">Customer</label>
+                        <input type="text" class="form-control" id="inputAddress21" placeholder="">
+                    </div>-->
+                    <div class="col-md-6">
+                        <label id="customerName" for="inputCity" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="inputCity1">
+
+                    </div>
+                    <div class="col-md-6">
+                        <label id="customerSalary" for="inputCity" class="form-label">Salary</label>
+                        <input type="text" class="form-control" id="inputSalary1">
+                    </div>
+                    <div class="col-md-6">
+                        <label id="customerAddress" for="inputCity" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="inputSalary11">
+                    </div>
+
+                </form>
+
+
+
+            </div>
+            <div class="col">
+                <form class="row g-3">
+                    <!--<div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Item</label>
+                        <input type="text" class="form-control" id="validationDefault01" value="" required>
+                    </div>-->
+                    <div class="col-12">
+                        <select id="formselectorOrder" class="form-select" aria-label="Default select example">
+                            <option selected>Item Id's</option>
+
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefaultUsername" class="form-label">Item Name</label>
+                        <div class="input-group">
+                        <!--<span class="input-group-text" id="inputGroupPrepend2">@</span>-->
+                            <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationDefault03" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="validationDefault03" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationDefault03" class="form-label">QTY Onhand</label>
+                        <input type="text" class="form-control" id="validationDefault0311" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationDefault03" class="form-label">Order Quantity</label>
+                        <input type="text" class="form-control" id="validationDefault031" required>
+                        <p><small class="text-danger pl-1" id="lblcusid"></small></p>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" id="orderAddItem" type="submit">Add Item</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col">
+
+                <label class="fw-bold">Total:-</label><label id="totalId">0</label><label class="fw-bold">/=</label>
+                <hr>
+                <label class="fw-bold">Sub Total:-</label><label id="subtotalId">0</label><label class="fw-bold">/=</label>
+
+
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4 position-relative">
+                        <label for="validationTooltip01" class="form-label">Cash</label>
+                        <input type="text" class="form-control" id="validationTooltip01" value="" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 position-relative">
+                        <label for="validationTooltip02" class="form-label">Discount</label>
+                        <input type="text" class="form-control" id="validationTooltip02" value="" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 position-relative">
+                        <label for="validationTooltipUsername" class="form-label">Balnce</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                            <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                            <div class="invalid-tooltip">
+                                Please choose a unique and valid username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button id="PurchaseButton" class="btn btn-primary" type="button">Purchase</button>
+                        <button id=""  >Purchase</button>
+                        <button class="btn btn-primary" id="PurchaseButton1" type="submit">Add Item</button>
+                    </div>
+                </form>
+
+
+            </div>
+
+                <section class="row mt-4">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <table  class="table table-hover">
+                        <thead>
+                        <tr style="background-color: #abffcb">
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">QTY</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody id="orderAddItemTable">
+                        <tr>
+                            <th scope="row">I000</th>
+                            <td>Mango</td>
+                            <td>23</td>
+                            <td>3</td>
+                            <td>4789</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-1"></div>
+
+            </section>
+            </section>
+
+        </div>
+    </div>
+</main>
 
 
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
@@ -114,15 +353,16 @@
 <script src="db/DB.js"></script>
 
 <script>
-    $("#btnSaveOrUpdate").click(function () {
+
+    //customer.................................................................
+    $("#btnSaveOrUpdate1").click(function () {
         //
         saveCustomer();
         //clearAll();/**/
         loadCustomer();
+        console.log(customerDB);
     });
     function saveCustomer(){
-
-
             //gather customer information
             let customerID = $("#txtCusID").val();
             let customerName = $("#txtCusName").val();
@@ -141,6 +381,7 @@
             //let row = `<tr><td>${customerID}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
 
             customerDB.push(customerObject);
+        $('#formselector').append(new Option(customerObject.id));
 
             /*select the table body and append the row */
             //$("#customerTable").append(row);
@@ -198,7 +439,7 @@
     }
 
 
-    $("#txtCusID").focus();
+   // $("#txtCusID").focus();
 
     $("#txtCusID").keydown(function (event) {
         if (event.key == "Enter") {
@@ -221,10 +462,13 @@
     });
 
 
-    $("#btnSearch").click(function () {
+    $("#btnSearch1").click(function () {
+
         var id=$("#exampleInputEmail1").val();
         console.log("aaa  "+id);
+        console.log("aaav  "+customerDB.id);
         var obj=search(id);
+
         if(obj){
             $("#txtCusID").val(obj.id);
             $("#txtCusName").val(obj.name);
@@ -238,12 +482,446 @@
 
 
     function search(ids){
+
         for (var i=0;i<customerDB.length;i++){
             if(customerDB[i].id==ids){
                 return customerDB[i];
             }
         }
     }
+    //end customer...................................
+
+    //Item....................................................................
+
+    $("#btnSaveOrUpdate").click(function () {
+        alert("Do you want really add this item...?");
+        //alert("a")
+        saveItem();
+        loadItem();
+
+        //gather customer information
+
+    });
+
+
+
+
+    $("#itemCode").keydown(function (event) {
+        if (event.key == "Enter") {
+
+            $("#itemName").focus();
+        }
+    });
+
+
+    $("#itemName").keydown(function (event) {
+        if (event.key == "Enter") {
+            $("#itemQty").focus();
+        }
+    });
+
+
+    $("#itemQty").keydown(function (event) {
+        if (event.key == "Enter") {
+            $("#itemPrice").focus();
+        }
+    });
+
+
+    function saveItem(){
+        let itemCode = $("#itemCode").val();
+        let itemName = $("#itemName").val();
+        let itemQty = $("#itemQty").val();
+        let itemPrice = $("#itemPrice").val();
+
+        var itemObject={
+            id:itemCode,
+            name:itemName,
+            qty:itemQty,
+            price:itemPrice
+        };
+
+        itemDB.push(itemObject);
+        //console.log(itemDB);
+        $("#formselectorOrder").append(new Option(itemObject.id));
+
+
+    }
+
+
+    function loadItem() {
+        //alert("lo")
+        $("#itemTable").empty();
+        for (var i of itemDB){
+            let row = `<tr><td>${i.id}</td><td>${i.name}</td><td>${i.qty}</td><td>${i.price}</td></tr>`;
+            $("#itemTable").append(row);
+
+            $('#itemCode,#itemName,#itemQty,#itemPrice').val("");
+        }
+
+
+        $("#itemTable>tr").click(function(){
+
+            let itemCode = $(this).children(":eq(0)").text(); // select first td and get text
+            let itemName = $(this).children(":eq(1)").text();
+            let itemQty = $(this).children(":eq(2)").text();
+            let itemPrice = $(this).children(":eq(3)").text();
+
+            console.log(itemCode, itemName, itemQty, itemPrice);
+            $("#itemCode").val(itemCode);
+            $("#itemName").val(itemName);
+            $("#itemQty").val(itemQty);
+            $("#itemPrice").val(itemPrice);
+        });
+
+
+        $("#itemTable>tr").dblclick(function(){
+            alert("Do you want to delete this row");
+            $(this).closest("tr").remove();
+            $('#itemCode,#itemName,#itemQty,#itemPrice').val("");
+        });
+    }
+
+
+    $("#btnSearch").click(function () {
+
+        var id=$("#exampleInputEmail12").val();
+
+        var obj=search1(id);
+        if(obj){
+            $("#itemCode").val(obj.id);
+            $("#itemName").val(obj.name);
+            $("#itemQty").val(obj.qty);
+            $("#itemPrice").val(obj.price);
+        }else{
+            alert("No Such a Customer");
+            $('#itemCode,#itemName,#itemQty,#itemPrice').val("");
+        }
+    });
+
+
+
+    function search1(ids){
+        for (var i=0;i<itemDB.length;i++){
+            if(itemDB[i].id==ids){
+                return itemDB[i];
+            }
+        }
+    }
+
+
+// end Item..................................................
+
+    //start oders..................................................................................................
+
+
+/*
+    var customerObject3={
+        id:"c001",
+        name:"name1",
+        address:"adress",
+        salary:"salary"
+    };*/
+
+/*    $('#formselector').append(new Option(customerObject3.id));*/
+
+
+
+
+
+
+    /*setText();
+
+    function setText(){
+        $("#inputCity1").val(customerObject3.name);
+        $("#inputSalary1").val(customerObject3.address);
+        $("#inputSalary11").val(customerObject3.address);
+
+    }
+*/
+
+//orders customer combo box
+
+    $("#formselector").click(function () {
+
+        var oIds=$("#formselector").val();
+        var customerObj=searchoIds(oIds);
+        loadTxtField(customerObj);
+
+    });
+
+//orders item combo box
+
+    $("#formselectorOrder").click(function () {
+
+        var iIds=$("#formselectorOrder").val();
+        var itemObj=searchiIds(iIds);
+        loadItemTxtField(itemObj);
+
+    });
+
+
+
+//search customer ids
+    function searchoIds(ids){
+
+        for (var i=0;i<customerDB.length;i++){
+            if(customerDB[i].id==ids){
+                return customerDB[i];
+            }
+        }
+    }
+
+
+// search item ids
+
+    function searchiIds(ids){
+
+        for (var i=0;i<itemDB.length;i++){
+            if(itemDB[i].id==ids){
+                return itemDB[i];
+            }
+        }
+    }
+
+
+
+    function  loadTxtField(customerObj){
+        $("#inputCity1").val(customerObj.name);
+        $("#inputSalary1").val(customerObj.salary);
+        $("#inputSalary11").val(customerObj.address);
+    }
+
+
+    function  loadItemTxtField(itemObj){
+        $("#validationDefaultUsername").val(itemObj.name);
+        $("#validationDefault03").val(itemObj.price);
+        $("#validationDefault0311").val(itemObj.qty);
+
+    }
+
+
+    $("#validationDefault031").click(function () {
+        var orderQty=$("#validationDefault031").val();
+        var qtyOnHand=$("#validationDefault0311").val();
+        $("#validationDefault031").css('border', '2px solid green');
+        $("#lblcusid").text("");
+        if (qtyOnHand<orderQty){
+            $("#lblcusid").text("Cus ID is a required field : Pattern C00-000");
+            console.log("appa");
+        }else{
+            $("#lblcusid").text("");
+
+        }
+
+    });
+
+    $("#orderAddItem").click(function (){
+
+        saveaddItem();
+        loadaddItem();
+    });
+
+    function saveaddItem(){
+
+        let itemIds = $("#formselectorOrder").val();
+        let itemPrice = $("#validationDefault03").val();
+        let itemName = $("#validationDefaultUsername").val();
+        let qtyOnHand = $("#validationDefault0311").val();
+        let orderQuantity = $("#validationDefault031").val();
+
+
+        var addItemobj={
+            iId:itemIds,
+            iPrice:itemPrice,
+            iName:itemName,
+            iQty:qtyOnHand,
+            iOrderQty:orderQuantity,
+            iTotal:orderQuantity*itemPrice
+        };
+
+        addItem.push(addItemobj);
+        //console.log(itemDB);
+
+        //update total and subTotal
+        var total = ($("#totalId").text());
+        total=parseInt(total);
+        total=total+parseInt(addItemobj.iTotal);
+        $("#totalId").text(total);
+        $("#subtotalId").text(total);
+
+
+    }
+
+    //load item to table
+    function loadaddItem() {
+
+        $("#orderAddItemTable").empty();
+        for (var i of addItem){
+            let row = `<tr><td>${i.iId}</td><td>${i.iName}</td><td>${i.iPrice}</td><td>${i.iOrderQty}</td><td>${i.iTotal}</td></tr>`;
+            $("#orderAddItemTable").append(row);
+
+            $('#formselectorOrder,#validationDefault03,#validationDefaultUsername,#validationDefault0311,#validationDefault031').val("");
+        }
+    }
+
+
+    //balance,incffient cash prepare
+    $("#validationTooltip01").click(function (){
+
+        let cash =parseInt($("#validationTooltip01").val());
+        var total = parseInt($("#subtotalId").text());
+        var balance=cash-total;
+        balance=parseInt(balance);
+        if (cash<total){
+            $("#validationTooltipUsername").val("");
+
+        }else{
+            $("#validationTooltipUsername").val(balance);
+        }
+
+    });
+
+    //discount cliced...prepare,sub total prepare
+
+    $("#validationTooltip02").click(function (){
+
+       var discount= parseInt($("#validationTooltip02").val());
+        var total = parseInt($("#totalId").text());
+        var subTotal=total-total*discount/100;
+        subTotal=parseInt(subTotal);
+        $("#subtotalId").text(subTotal);
+    });
+
+    $("#PurchaseButton").click(function (){
+
+        var orderId=$("#inputEmail41").val();
+        var orderDate=$("#inputPassword41").val();
+
+        var customerIds=$("#formselector").val();
+
+        var name=$("#inputCity1").val();
+
+
+        var salary=$("#inputSalary1").val();
+        var address=$("#inputSalary11").val();
+        var cash=$("#validationTooltip01").val();
+        var discount=$("#validationTooltip02").val();
+        var balance=$("#validationTooltipUsername").val();
+        var total=$("#totalId").text();
+        var subTotal=$("#subtotalId").text();
+        var temparray=addItem;
+
+
+        var addOrder={
+            oId:orderId,
+            oDate:orderDate,
+            customerId:customerIds,
+            name:name,
+            salary:salary,
+            address:address,
+            objarray:temparray,
+            total:total,
+            subTotal:subTotal,
+            cash:cash,
+            discount:discount,
+            balance:balance
+
+
+        };
+        orderDB.push(addOrder);
+
+        addItem=[];
+      $("#inputEmail41").val("");
+      $("#inputPassword41").val("");
+
+        $("#formselector").val("");
+
+        $("#inputCity1").val("");
+
+
+      $("#inputSalary1").val("");
+        $("#inputSalary11").val("");
+
+        $("#validationTooltip01").val("");
+        $("#validationTooltip02").val("");
+        $("#validationTooltipUsername").val("");
+
+        $("#totalId").text(0);
+        $("#subtotalId").text(0);
+
+        $("#orderAddItemTable").empty();
+
+        alert("Placed");
+
+
+
+    });
+
+    $("#inputEmail41").keydown(function (event){
+        if(event.key=="Enter"){
+
+            alert("searching");
+
+            var orderId=$("#inputEmail41").val();
+            alert(orderId);
+            var placeOrderObj=search(orderId);
+            alert("searching2");
+
+            loadOrderTxtField(placeOrderObj);
+            alert("searched3");
+
+        }
+    });
+
+    function search(ids) {
+        for (var i=0;i<orderDB.length;i++){
+            if(orderDB[i].oId==ids){
+                return orderDB[i];
+            }else{
+                alert("no need to this orderId");
+            }
+        }
+        
+    }
+
+    function  loadOrderTxtField(placeOrderObj){
+        alert("searched31");
+        $("#inputPassword41").val(placeOrderObj.oDate);
+        alert("searched4");
+        $("#formselector").val(placeOrderObj.customerId);
+        alert("searched5");
+        $("#inputCity1").val(placeOrderObj.name);
+        $("#inputSalary1").val(placeOrderObj.salary);
+        $("#inputSalary11").val(placeOrderObj.address);
+        var total1=parseInt(placeOrderObj.total);
+        alert(total1);
+
+        $("#totalId").text(total1);
+
+        var subtotal1=parseInt(placeOrderObj.subTotal);
+        alert(subtotal1);
+
+        $("#subtotalId").text(subtotal1);
+
+
+        $("#validationTooltip01").val(placeOrderObj.cash);
+        $("#validationTooltip02").val(placeOrderObj.discount);
+        $("#validationTooltipUsername").val(placeOrderObj.balance);
+
+        $("#orderAddItemTable").empty();
+        for (var i of placeOrderObj.objarray){
+            let row = `<tr><td>${i.iId}</td><td>${i.iName}</td><td>${i.iPrice}</td><td>${i.iOrderQty}</td><td>${i.iTotal}</td></tr>`;
+            $("#orderAddItemTable").append(row);
+
+            $('#formselectorOrder,#validationDefault03,#validationDefaultUsername,#validationDefault0311,#validationDefault031').val("");
+        }
+
+
+    }
+
+
+    //end orders....................................................................................................
 
 </script>
 
