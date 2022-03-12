@@ -1042,7 +1042,7 @@
 
         function searchiIds(ids){
             for (var i=0;i<itemDB.length;i++){
-                if(itemDB[i].getItemName==ids){
+                if(itemDB[i].id==ids){
                     return itemDB[i];
                 }
             }
@@ -1056,10 +1056,9 @@
 
 
         function  loadItemTxtField(itemObj){
-            $("#validationDefaultUsername").val(itemObj.getItemName);
-            $("#validationDefault03").val(itemObj.getItemPrice);
-            $("#validationDefault0311").val(itemObj.getItemQty);
-
+            $("#validationDefaultUsername").val(itemObj.name);
+            $("#validationDefault03").val(itemObj.price);
+            $("#validationDefault0311").val(itemObj.qty);
         }
 
 
@@ -1092,18 +1091,18 @@
             let qtyOnHand = $("#validationDefault0311").val();
             let orderQuantity = $("#validationDefault031").val();
 
-            var itemObjectUpdate=new Customer(itemIds,itemPrice,itemName,qtyOnHand,orderQuantity,orderQuantity*itemPrice);
+           // var itemObjectUpdate=new Customer(itemIds,itemPrice,itemName,qtyOnHand,orderQuantity,orderQuantity*itemPrice);
 
-           /* var addItemobj={
+            var addItemobj={
                 iId:itemIds,
                 iPrice:itemPrice,
                 iName:itemName,
                 iQty:qtyOnHand,
                 iOrderQty:orderQuantity,
                 iTotal:orderQuantity*itemPrice
-            };*/
+            };
 
-            addItem.push(itemObjectUpdate);
+            addItem.push(addItemobj);
 
 
 
