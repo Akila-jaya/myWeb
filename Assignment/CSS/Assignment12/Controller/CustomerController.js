@@ -199,7 +199,7 @@ function searchCustomer(id){
 const cusIDRegEx = /^(C00-)[0-9]{1,3}$/;
 const cusNameRegEx = /^[A-z ]{5,20}$/;
 const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
-const cusSalaryRegEx = /^[A-z ]{5,20}$/;
+const cusSalaryRegEx =  /^[0-9]{1,}[.]?[0-9]{1,2}$/;
 
 //method calling start
 
