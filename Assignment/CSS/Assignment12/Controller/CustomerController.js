@@ -4,7 +4,7 @@ $("#btnSaveOrUpdate1").click(function () {
     saveCustomer();
     //clearAll();/**/
     loadCustomer();
-    console.log(customerDB);
+
 });
 function saveCustomer(){
     //gather customer information
@@ -13,13 +13,13 @@ function saveCustomer(){
     let customerAddress = $("#txtCusAddress").val();
     let customerTP = $("#txtCusTP").val();
 
-    /* var customerObject={
+     var customerObject={
                 id:customerID,
                 name:customerName,
                 address:customerAddress,
                 salary:customerTP
 
-     };*/
+     };
 
     var customerObjectUpdate=new Customer(customerID,customerName,customerAddress,customerTP);
 
@@ -27,17 +27,17 @@ function saveCustomer(){
     //let row = `<tr><td>${customerID}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
 
     customerDB.push(customerObjectUpdate);
+    $('#formselector').append(new Option(customerObject.id));
 
 
-
-    for (let i = 0; i < customerDB.length; i++) {
+    /*for (let i = 0; i < customerDB.length; i++) {
         $('#formselector').append(new Option(customerDB[i].getCustomerID()));
-    }
+    }*/
 
 }
 
 function loadCustomer() {
-    alert("LoadCustomer Load");
+    //alert("LoadCustomer Load");
     $("#customerTable").empty();
     for (let i = 0; i < customerDB.length; i++) {
         let row = `<tr><td>${customerDB[i].getCustomerID()}</td><td>${customerDB[i].getCustName()}</td><td>${customerDB[i].getCustAge()}</td><td>${customerDB[i].getCustTP()}</td></tr>`;
@@ -325,7 +325,7 @@ function setButton() {
 //End Validation**************************************************************
 
 $("#updateBtn").click(function () {
-    alert("akila");
+
 
     let customerId=$("#txtCusID").val();
     let customerName=$("#txtCusName").val();
@@ -339,7 +339,7 @@ $("#updateBtn").click(function () {
     }
 });
 function updateCustomer1(obj) {
-    alert("updateCustomer Calleeeeeeeeeeeeeeed");
+
     for (let i=0;i<customerDB.length;i++){
         if(customerDB[i].getCustomerID()==obj.getCustomerID()){
             customerDB[i].setCustID(obj.getCustomerID());

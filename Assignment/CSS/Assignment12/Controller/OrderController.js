@@ -28,6 +28,13 @@ function setText(){
 
 //orders customer combo box
 
+
+/*for (let i = 0; i < customerDB.length; i++) {
+    $('#formselector').append(new Option(customerDB[i].getCustomerID()));
+}*/
+
+
+
 $("#formselector").click(function () {
 
     var oIds=$("#formselector").val();
@@ -69,7 +76,7 @@ function searchiIds(ids){
 }
 
 function  loadTxtField(customerObj){
-    $("#inputCity1").val(customerObj.getCustomerID);
+    $("#inputCity1").val(customerObj.getCustName);
     $("#inputSalary1").val(customerObj.getCustTP);
     $("#inputSalary11").val(customerObj.getCustAge);
 }
@@ -243,15 +250,15 @@ $("#PurchaseButton").click(function (){
 $("#inputEmail41").keydown(function (event){
     if(event.key=="Enter"){
 
-        alert("searching");
+        //alert("searching");
 
         var orderId=$("#inputEmail41").val();
-        alert(orderId);
+       // alert(orderId);
         var placeOrderObj=search(orderId);
-        alert("searching2");
+       // alert("searching2");
 
         loadOrderTxtField(placeOrderObj);
-        alert("searched3");
+       // alert("searched3");
 
     }
 });
@@ -268,21 +275,21 @@ function search(ids) {
 }
 
 function  loadOrderTxtField(placeOrderObj){
-    alert("searched31");
+    //alert("searched31");
     $("#inputPassword41").val(placeOrderObj.oDate);
-    alert("searched4");
+   // alert("searched4");
     $("#formselector").val(placeOrderObj.customerId);
-    alert("searched5");
+   // alert("searched5");
     $("#inputCity1").val(placeOrderObj.name);
     $("#inputSalary1").val(placeOrderObj.salary);
     $("#inputSalary11").val(placeOrderObj.address);
     var total1=parseInt(placeOrderObj.total);
-    alert(total1);
+    //alert(total1);
 
     $("#totalId").text(total1);
 
     var subtotal1=parseInt(placeOrderObj.subTotal);
-    alert(subtotal1);
+   // alert(subtotal1);
 
     $("#subtotalId").text(subtotal1);
 

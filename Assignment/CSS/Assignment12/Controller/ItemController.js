@@ -1,7 +1,7 @@
 //Item....................................................................
 
 $("#btnSaveOrUpdate").click(function () {
-    alert("Do you want really add this item...?");
+   // alert("Do you want really add this item...?");
     //alert("a")
     saveItem();
     loadItem();
