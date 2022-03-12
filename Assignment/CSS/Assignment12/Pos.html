@@ -7,25 +7,21 @@
     </head>
 
     <header>
-
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul style="background-color:green" class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                <button class="nav-link active" id="HomeNav" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="Customers-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Customers</button>
+                <a style="background-color:green" id="customers" class="nav-link active" aria-current="page" href="#">Customer</a>
             </li>
             <a href="Orders.html">
                 <li  class="nav-item" role="presentation">
-                    <button class="nav-link" id="Orders-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Orders</button>
+                    <a style="background-color:green" id="orders" class="nav-link active" href="#">Orders</a>
                 </li>
 
             </a>
-
-
-
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="Items-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Items</button>
+                <a style="background-color:green" id="items" class="nav-link active" href="#">Item</a>
             </li>
 
         </ul>
@@ -37,7 +33,7 @@
 
     </header>
     <body>
-    <main>
+    <main id="one">
         <div>
             <h3 class="ps-4" style="font-family: Arial;">
                 <img src="assets/images/cust.png" alt="" width="33" height="33" class="d-inline-block align-text-top">
@@ -113,7 +109,7 @@
     </div>
     </main>
 
-    <main>
+    <main id="two">
         <div>
             <h3 class="ps-4" style="font-family: Arial;">
                 <img src="assets/images/ItemsIcon.png" alt="" width="33" height="33" class="d-inline-block align-text-top">
@@ -187,7 +183,7 @@
     </main>
 
 
-    <main>
+    <main id="three">
         <div>
             <h3 class="ps-4" style="font-family: Arial;">
                 <img src="assets/images/Orderslogo.png" alt="" width="33" height="33" class="d-inline-block align-text-top">
@@ -366,14 +362,17 @@
     <script src="model/Item.js"></script>
     <script src="model/ItemDetails.js"></script>
     <script src="model/Orders.js"></script>
+    <script src="Controller/CustomerController.js"></script>
+    <script src="Controller/ItemController.js"></script>
+    <script src="Controller/OrderController.js"></script>
 
     <script>
 
-        //customer.................................................................
+/*        //customer.................................................................
         $("#btnSaveOrUpdate1").click(function () {
             //
             saveCustomer();
-            //clearAll();/**/
+            //clearAll();/!**!/
             loadCustomer();
             console.log(customerDB);
         });
@@ -384,17 +383,17 @@
                 let customerAddress = $("#txtCusAddress").val();
                 let customerTP = $("#txtCusTP").val();
 
-              /* var customerObject={
+              /!* var customerObject={
                           id:customerID,
                           name:customerName,
                           address:customerAddress,
                           salary:customerTP
 
-               };*/
+               };*!/
 
            var customerObjectUpdate=new Customer(customerID,customerName,customerAddress,customerTP);
 
-                /*create a html row*/
+                /!*create a html row*!/
                 //let row = `<tr><td>${customerID}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
 
                 customerDB.push(customerObjectUpdate);
@@ -465,7 +464,7 @@
         //----------------------------------------Start issue of update
 
 
-       /* function loadCustomerUpadate() {
+       /!* function loadCustomerUpadate() {
 
             //$("#customerTable").empty();
             for (var i of customerUpdateDb){
@@ -515,7 +514,7 @@
                 $(row_index).children(":eq(0)").val(cusID1);
             }*!/
         }
-    */
+    *!/
 
 
         //----------------------------------------end issue of update
@@ -621,7 +620,7 @@
                         if (resp) {
                             let res = confirm("Do you really need to add this Customer..?");
                             if (res) {
-                              /*  saveCustomer();*/
+                              /!*  saveCustomer();*!/
                                 clearAll();
                             }
                         } else {
@@ -720,9 +719,9 @@
                 }
             }
         }
-        //end customer...................................
+        //end customer...................................*/
 
-        //Item....................................................................
+/* //Item....................................................................
 
         $("#btnSaveOrUpdate").click(function () {
             alert("Do you want really add this item...?");
@@ -896,7 +895,7 @@
                         if (resp) {
                             let res = confirm("Do you really need to add this Customer..?");
                             if (res) {
-                                /*  saveCustomer();*/
+                                /!*  saveCustomer();*!/
                                 clearAll();
                             }
                         } else {
@@ -977,26 +976,27 @@
 
 
         // end Item..................................................
+*/
 
-        //start oders..................................................................................................
+/*//start oders..................................................................................................
 
 
-    /*
+    /!*
         var customerObject3={
             id:"c001",
             name:"name1",
             address:"adress",
             salary:"salary"
-        };*/
+        };*!/
 
-    /*    $('#formselector').append(new Option(customerObject3.id));*/
-
-
+    /!*    $('#formselector').append(new Option(customerObject3.id));*!/
 
 
 
 
-        /*setText();
+
+
+        /!*setText();
 
         function setText(){
             $("#inputCity1").val(customerObject3.name);
@@ -1004,7 +1004,7 @@
             $("#inputSalary11").val(customerObject3.address);
 
         }
-    */
+    *!/
 
     //orders customer combo box
 
@@ -1284,6 +1284,37 @@
 
 
         //end orders....................................................................................................
+*/
+
+
+
+$("#customers").click(function () {
+    $("#one").css("display","block");
+    $("#two").css("display","none");
+    $("#three").css("display","none")
+});
+
+$("#items").click(function () {
+    $("#one").css("display","none");
+    $("#two").css("display","block");
+    $("#three").css("display","none");
+  /*  loadAllItems();*/
+
+});
+
+$("#orders").click(function () {
+    $("#one").css("display","none");
+    $("#two").css("display","none");
+    $("#three").css("display","block");
+   /* loadAllCustomerIds();
+    loadAllItemIds();
+    generateOrderID();
+    $("#btnAddItem").attr('disabled', true);
+    $("#btnUpdateItem").attr('disabled', true);
+    $("#btnPurchase").attr('disabled', true);*/
+});
+
+
 
     </script>
 

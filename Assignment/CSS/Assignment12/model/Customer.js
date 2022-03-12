@@ -10,16 +10,19 @@ function Customer(id,name,age,tel){
     }
     this.getCustName=function () {
         return customerName;
-
     }
+
     this.getCustAge=function () {
         return customerAge;
-
     }
+
+
     this.getCustTP=function () {
         return customerTP;
 
     }
+
+
     this.setCustID = function (v) {
         customerId=v;
     }
